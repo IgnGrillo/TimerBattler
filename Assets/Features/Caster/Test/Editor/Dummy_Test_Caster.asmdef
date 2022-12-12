@@ -1,0 +1,12 @@
+﻿{
+  "name": "Dummy_Test_Caster",
+  "references": [
+    "UniRx",
+    "Dummy_Core",
+    "Dummy_Caster",
+    "Dummy_Skills"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

@@ -1,0 +1,10 @@
+﻿{
+  "name": "Dummy_Test_Mouse",
+  "includePlatforms": [
+    "Editor"
+  ],
+  "references": [
+    "Dummy_Core",
+    "Dummy_Mouse"
+  ]
+}

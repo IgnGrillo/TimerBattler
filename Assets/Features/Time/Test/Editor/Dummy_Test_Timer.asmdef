@@ -1,0 +1,19 @@
+{
+    "name": "Dummy_Test_Timer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:56a1e5927eaf4c5ebd557d1de8687021",
+        "GUID:86c66cbd3021470f9e6bf75e432cf353"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

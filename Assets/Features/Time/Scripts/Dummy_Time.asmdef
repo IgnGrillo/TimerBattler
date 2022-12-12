@@ -1,0 +1,7 @@
+﻿{
+  "name": "Dummy_Time",
+  "references": [
+    "Dummy_Core",
+    "Unity.TextMeshPro"
+  ]
+}

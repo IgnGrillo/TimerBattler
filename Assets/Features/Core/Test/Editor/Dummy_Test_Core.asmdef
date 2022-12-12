@@ -1,0 +1,9 @@
+﻿{
+  "name": "Dummy_Test_Core",
+  "includePlatforms": [
+    "Editor"
+  ],
+  "references": [
+    "Dummy_Core"
+  ]
+}

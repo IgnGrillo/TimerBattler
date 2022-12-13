@@ -1,0 +1,23 @@
+#You need to run this at least once and use the artifact to generate the Unity License Key
+#Two Simple steps: Request Activation File && Upload Artifact
+name: Acquire Activation File
+on: [push]
+jobs:
+  activation: 
+    name: Request Manual Activation File
+    runs-on: ubuntu-latest
+    steps:
+      #Request File
+      #You can check this url to find the different versions https://github.com/marketplace/actions/unity-request-activation-file?version=v2.0.0
+      #You can check this url to find the docker available Unity version: https://game.ci/docs/docker/versions
+      - name: Request file
+        id: getManualLicenseFile
+        uses: webbertakken/unity-request-manual-activation-file@v2.0.0
+        with:
+          unityversion: 2021.3.9f1
+      #Upload Artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ steps.getManualLicenseFile.outputs.filepath }}
+          path: ${{ steps.getManualLicenseFile.outputs.filepath }}

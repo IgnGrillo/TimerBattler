@@ -14,12 +14,6 @@ namespace Features.Caster.Test.Editor
         private const int Once = 1;
 
         [Test]
-        public void TestIntentionallyFailingForCITest()
-        {
-            Assert.True(false);
-        }
-
-        [Test]
         public void AdvanceSkillsOnTimerUpdate()
         {
             var eventBus = new EventBus();

@@ -1,14 +1,17 @@
-﻿using Features.Core.Scripts.Delivery;
-using Features.Core.Scripts.Domain;
+﻿using Features.Core.Scripts.Domain;
 using Features.Mouse.Scripts.Domain;
 
 namespace Features.Mouse.Scripts.Infrastructure
 {
     public class InMemoryHoveringRepository : IHoveringRepository
     {
-        private IAgentView _currentlyHoveringAgent;
+        private IAgentView _previousAgent;
+        private IAgentView _currentAgent;
 
-        public IAgentView Get() => _currentlyHoveringAgent;
-        public void Set(IAgentView currentAgent) => _currentlyHoveringAgent = currentAgent;
+        public IAgentView GetPreviousAgent() => _previousAgent;
+        public IAgentView GetCurrentAgent() => _currentAgent;
+
+        public void SetCurrent(IAgentView currentAgent) => _currentAgent = currentAgent;
+        public void SetPrevious(IAgentView previousAgent) => _previousAgent = previousAgent;
     }
 }

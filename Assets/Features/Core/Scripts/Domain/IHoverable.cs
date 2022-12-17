@@ -1,6 +1,6 @@
 ﻿namespace Features.Core.Scripts.Domain
 {
-    public interface IAgentView
+    public interface IHoverable
     {
         UnitDelegate OnHoveringStart { get; set; }
         UnitDelegate OnHovering { get; set;}

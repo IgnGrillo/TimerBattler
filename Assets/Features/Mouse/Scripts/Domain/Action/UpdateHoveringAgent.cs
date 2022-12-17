@@ -8,6 +8,6 @@ namespace Features.Mouse.Scripts.Domain.Action
 
         public UpdateHoveringAgent(HoveringService service) => _service = service;
 
-        public void Execute(IAgentView agentView) => _service.UpdateHovering(agentView);
+        public void Execute(IHoverable hoverable) => _service.UpdateHovering(hoverable);
     }
 }

@@ -17,7 +17,7 @@ namespace Features.Mouse.Test.Editor
         {
             var view = GivenAView();
             var getRaycastAgent = GivenARaycastAgent();
-            var presenter = GivenAPresenter(view, getRaycastAgent: getRaycastAgent);
+            var presenter = GivenAPresenter(view, getHoverable: getRaycastAgent);
             GivenAnInitialization(presenter);
             WhenOnUpdateIsRaised(view);
             ThenGetRaycastAgentIsCalled(getRaycastAgent);
@@ -29,9 +29,9 @@ namespace Features.Mouse.Test.Editor
             var view = GivenAView();
             var getRaycastAgent = GivenARaycastAgent();
             var updateHoveringAgent = GivenAnUpdateHoveringAgent();
-            var agentView = Substitute.For<IAgentView>();
+            var agentView = Substitute.For<IHoverable>();
             getRaycastAgent.Execute().Returns(agentView);
-            var presenter = GivenAPresenter(view, getRaycastAgent: getRaycastAgent,  updateHoveringAgent:updateHoveringAgent);
+            var presenter = GivenAPresenter(view, getHoverable: getRaycastAgent,  updateHoveringAgent:updateHoveringAgent);
             GivenAnInitialization(presenter);
             WhenOnUpdateIsRaised(view);
             ThenUpdateHoveringAgentIsCalled(updateHoveringAgent, agentView);
@@ -44,9 +44,9 @@ namespace Features.Mouse.Test.Editor
             var getRaycastAgent = GivenARaycastAgent();
             var updateHoveringAgent = GivenAnUpdateHoveringAgent();
             var checkForOnHoveringStart = GivenACheckForOnHoveringStart();
-            var agentView = Substitute.For<IAgentView>();
+            var agentView = Substitute.For<IHoverable>();
             getRaycastAgent.Execute().Returns(agentView);
-            var presenter = GivenAPresenter(view,getRaycastAgent: getRaycastAgent, updateHoveringAgent:updateHoveringAgent, checkForOnHoveringStart: checkForOnHoveringStart);
+            var presenter = GivenAPresenter(view,getHoverable: getRaycastAgent, updateHoveringAgent:updateHoveringAgent, checkForOnHoveringStart: checkForOnHoveringStart);
             GivenAnInitialization(presenter);
             WhenOnUpdateIsRaised(view);
             ThenCheckForOnHoveringStartIsCalled(checkForOnHoveringStart);
@@ -59,9 +59,9 @@ namespace Features.Mouse.Test.Editor
             var getRaycastAgent = GivenARaycastAgent();
             var updateHoveringAgent = GivenAnUpdateHoveringAgent();
             var checkForOnHovering = GivenACheckForOnHovering();
-            var agentView = Substitute.For<IAgentView>();
+            var agentView = Substitute.For<IHoverable>();
             getRaycastAgent.Execute().Returns(agentView);
-            var presenter = GivenAPresenter(view,getRaycastAgent: getRaycastAgent, updateHoveringAgent: updateHoveringAgent, checkForOnHovering: checkForOnHovering);
+            var presenter = GivenAPresenter(view,getHoverable: getRaycastAgent, updateHoveringAgent: updateHoveringAgent, checkForOnHovering: checkForOnHovering);
             GivenAnInitialization(presenter);
             WhenOnUpdateIsRaised(view);
             ThenCheckForOnHoveringIsCalled(checkForOnHovering);
@@ -74,9 +74,9 @@ namespace Features.Mouse.Test.Editor
             var getRaycastAgent = GivenARaycastAgent();
             var updateHoveringAgent = GivenAnUpdateHoveringAgent();
             var checkForOnHoveringEnd = givenACheckForOnHoveringEnd();
-            var agentView = Substitute.For<IAgentView>();
+            var agentView = Substitute.For<IHoverable>();
             getRaycastAgent.Execute().Returns(agentView);
-            var presenter = GivenAPresenter(view, getRaycastAgent: getRaycastAgent, updateHoveringAgent: updateHoveringAgent, checkForOnHoveringEnd: checkForOnHoveringEnd);
+            var presenter = GivenAPresenter(view, getHoverable: getRaycastAgent, updateHoveringAgent: updateHoveringAgent, checkForOnHoveringEnd: checkForOnHoveringEnd);
             GivenAnInitialization(presenter);
             WhenOnUpdateIsRaised(view);
             ThenCheckForOnHoveringEndIsCalled(checkForOnHoveringEnd);
@@ -94,14 +94,14 @@ namespace Features.Mouse.Test.Editor
         }
 
         private static IMouseView GivenAView() => Substitute.For<IMouseView>();
-        private static IGetRaycastAgent GivenARaycastAgent() => Substitute.For<IGetRaycastAgent>();
+        private static IGetHoverable GivenARaycastAgent() => Substitute.For<IGetHoverable>();
         private static IUpdateHoveringAgent GivenAnUpdateHoveringAgent() => Substitute.For<IUpdateHoveringAgent>();
         private static ICheckForOnHoveringStart GivenACheckForOnHoveringStart() => Substitute.For<ICheckForOnHoveringStart>();
         private static ICheckForOnHovering GivenACheckForOnHovering() => Substitute.For<ICheckForOnHovering>();
         private static ICheckForOnHoveringEnd givenACheckForOnHoveringEnd() => Substitute.For<ICheckForOnHoveringEnd>();
         private MousePresenter GivenAPresenter(IMouseView view = null, 
                                                IUpdateMousePosition updateMousePosition = null,
-                                               IGetRaycastAgent getRaycastAgent = null,
+                                               IGetHoverable getHoverable = null,
                                                IUpdateHoveringAgent updateHoveringAgent = null,
                                                ICheckForOnHoveringStart checkForOnHoveringStart = null,
                                                ICheckForOnHovering checkForOnHovering = null,
@@ -109,7 +109,7 @@ namespace Features.Mouse.Test.Editor
         {
             return new MousePresenter(view ?? Substitute.For<IMouseView>(),
                     updateMousePosition ?? Substitute.For<IUpdateMousePosition>(),
-                    getRaycastAgent ?? Substitute.For<IGetRaycastAgent>(),
+                    getHoverable ?? Substitute.For<IGetHoverable>(),
                     updateHoveringAgent ?? Substitute.For<IUpdateHoveringAgent>(),
                     checkForOnHoveringStart ?? Substitute.For<ICheckForOnHoveringStart>(),
                     checkForOnHovering ?? Substitute.For<ICheckForOnHovering>(),
@@ -118,10 +118,10 @@ namespace Features.Mouse.Test.Editor
 
         private static void GivenAnInitialization(MousePresenter presenter) => presenter.Initialize();
         private static void WhenOnUpdateIsRaised(IMouseView view) => view.OnUpdate += Raise.Event<UnitDelegate>();
-        private static void ThenGetRaycastAgentIsCalled(IGetRaycastAgent getRaycastAgent) => getRaycastAgent.Received(Once).Execute();
-        private static void ThenUpdateHoveringAgentIsCalled(IUpdateHoveringAgent updateHoveringAgent, IAgentView agentView) => updateHoveringAgent.Received(Once).Execute(agentView);
+        private static void ThenGetRaycastAgentIsCalled(IGetHoverable getHoverable) => getHoverable.Received(Once).Execute();
+        private static void ThenUpdateHoveringAgentIsCalled(IUpdateHoveringAgent updateHoveringAgent, IHoverable hoverable) => updateHoveringAgent.Received(Once).Execute(hoverable);
         private static void ThenCheckForOnHoveringStartIsCalled(ICheckForOnHoveringStart checkForOnHoveringStart) => checkForOnHoveringStart.Received(Once).Execute();
         private static void ThenCheckForOnHoveringIsCalled(ICheckForOnHovering checkForOnHovering) => checkForOnHovering.Received(Once).Execute();
-        private static void ThenCheckForOnHoveringEndIsCalled(ICheckForOnHoveringEnd checkForOnHoveringEnd ) => checkForOnHoveringEnd.Received(Once).Execute();
+        private static void ThenCheckForOnHoveringEndIsCalled(ICheckForOnHoveringEnd checkForOnHoveringEnd) => checkForOnHoveringEnd.Received(Once).Execute();
     }
 }

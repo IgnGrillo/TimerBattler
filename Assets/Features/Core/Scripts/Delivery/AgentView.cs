@@ -1,10 +1,9 @@
-﻿using System;
-using Features.Core.Scripts.Domain;
+﻿using Features.Core.Scripts.Domain;
 using UnityEngine;
 
 namespace Features.Core.Scripts.Delivery
 {
-    public class AgentView : MonoBehaviour, IAgentView {
+    public class AgentView : MonoBehaviour, IHoverable {
         public UnitDelegate OnHoveringStart { get; set; }
         public UnitDelegate OnHovering { get; set; }
         public UnitDelegate OnHoveringEnd { get; set; }

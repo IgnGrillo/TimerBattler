@@ -4,6 +4,6 @@ namespace Features.Mouse.Scripts.Domain.Action
 {
     public interface IUpdateHoveringAgent
     {
-        void Execute(IAgentView agentView);
+        void Execute(IHoverable hoverable);
     }
 }

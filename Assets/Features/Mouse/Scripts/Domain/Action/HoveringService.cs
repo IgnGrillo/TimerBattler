@@ -10,16 +10,16 @@ namespace Features.Mouse.Scripts.Domain.Action
 
         public HoveringService(IHoveringRepository repository) => _repository = repository;
 
-        public void UpdateHovering(IAgentView currentAgent)
+        public void UpdateHovering(IHoverable currentAgent)
         {
-            _repository.SetPrevious(_repository.GetCurrentAgent());
+            _repository.SetPrevious(_repository.GetCurrentHoverable());
             _repository.SetCurrent(currentAgent);
         }
 
         public void CheckForOnHoveringStart()
         {
-            var previousAgent = _repository.GetPreviousAgent();
-            var currentAgent = _repository.GetCurrentAgent();
+            var previousAgent = _repository.GetPreviousHoverable();
+            var currentAgent = _repository.GetCurrentHoverable();
             
             if (IsHoveringAnAgent() && IsHoveringDifferentAgent())
                 currentAgent.OnHoveringStart();
@@ -30,8 +30,8 @@ namespace Features.Mouse.Scripts.Domain.Action
         
         public void CheckForOnHovering()
         {
-            var previousAgent = _repository.GetPreviousAgent();
-            var currentAgent = _repository.GetCurrentAgent();
+            var previousAgent = _repository.GetPreviousHoverable();
+            var currentAgent = _repository.GetCurrentHoverable();
             
             if (IsHoveringAnAgent() && IsHoveringSameAgent())
                 currentAgent.OnHovering();
@@ -42,8 +42,8 @@ namespace Features.Mouse.Scripts.Domain.Action
         
         public void CheckForOnHoveringEnd()
         {
-            var previousAgent = _repository.GetPreviousAgent();
-            var currentAgent = _repository.GetCurrentAgent();
+            var previousAgent = _repository.GetPreviousHoverable();
+            var currentAgent = _repository.GetCurrentHoverable();
             
             if (IsNotHoveringAnAgent() && WasHoveringAnAgent())
                 previousAgent.OnHoveringEnd();

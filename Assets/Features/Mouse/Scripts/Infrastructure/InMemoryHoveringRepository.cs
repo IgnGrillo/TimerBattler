@@ -5,13 +5,13 @@ namespace Features.Mouse.Scripts.Infrastructure
 {
     public class InMemoryHoveringRepository : IHoveringRepository
     {
-        private IAgentView _previousAgent;
-        private IAgentView _currentAgent;
+        private IHoverable _previousHoverable;
+        private IHoverable _currentHoverable;
 
-        public IAgentView GetPreviousAgent() => _previousAgent;
-        public IAgentView GetCurrentAgent() => _currentAgent;
+        public IHoverable GetPreviousHoverable() => _previousHoverable;
+        public IHoverable GetCurrentHoverable() => _currentHoverable;
 
-        public void SetCurrent(IAgentView currentAgent) => _currentAgent = currentAgent;
-        public void SetPrevious(IAgentView previousAgent) => _previousAgent = previousAgent;
+        public void SetCurrent(IHoverable current) => _currentHoverable = current;
+        public void SetPrevious(IHoverable previous) => _previousHoverable = previous;
     }
 }

@@ -4,9 +4,9 @@ namespace Features.Mouse.Scripts.Domain
 {
     public interface IHoveringRepository
     {
-        IAgentView GetPreviousAgent();
-        IAgentView GetCurrentAgent();
-        void SetCurrent(IAgentView currentAgent);
-        void SetPrevious(IAgentView previousAgent);
+        IHoverable GetPreviousHoverable();
+        IHoverable GetCurrentHoverable();
+        void SetCurrent(IHoverable current);
+        void SetPrevious(IHoverable previous);
     }
 }

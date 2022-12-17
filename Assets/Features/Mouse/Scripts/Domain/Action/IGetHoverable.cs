@@ -2,8 +2,8 @@
 
 namespace Features.Mouse.Scripts.Domain.Action
 {
-    public interface IGetRaycastAgent
+    public interface IGetHoverable
     {
-        IAgentView Execute();
+        IHoverable Execute();
     }
 }

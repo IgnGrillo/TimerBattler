@@ -12,7 +12,7 @@ namespace Features.Mouse.Scripts.Provider
             var hoveringService = new HoveringService(new InMemoryHoveringRepository());
             return new MousePresenter(mouseView,
                     new UpdateMousePosition(),
-                    new GetRaycastAgent(new MouseRayService(mouseView.RaycastLayerMask)),
+                    new GetHoverable(new MouseRayService(mouseView.RaycastLayerMask)),
                     new UpdateHoveringAgent(hoveringService),
                     new CheckForOnHoveringStart(hoveringService),
                     new CheckForOnHovering(hoveringService),

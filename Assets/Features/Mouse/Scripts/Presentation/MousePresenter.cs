@@ -7,14 +7,14 @@ namespace Features.Mouse.Scripts.Presentation
     {
         private readonly IMouseView _view;
         private readonly IUpdateMousePosition _updateMousePosition;
-        private readonly IGetRaycastAgent _getRaycastAgent;
+        private readonly IGetHoverable _getHoverable;
         private readonly IUpdateHoveringAgent _updateHoveringAgent;
         private readonly ICheckForOnHoveringStart _checkForOnHoveringStart;
         private readonly ICheckForOnHovering _checkForOnHovering;
         private readonly ICheckForOnHoveringEnd _checkForOnHoveringEnd;
 
         public MousePresenter(IMouseView view, IUpdateMousePosition updateMousePosition,
-                              IGetRaycastAgent getRaycastAgent,
+                              IGetHoverable getHoverable,
                               IUpdateHoveringAgent updateHoveringAgent,
                               ICheckForOnHoveringStart checkForOnHoveringStart,
                               ICheckForOnHovering checkForOnHovering,
@@ -22,22 +22,19 @@ namespace Features.Mouse.Scripts.Presentation
         {
             _view = view;
             _updateMousePosition = updateMousePosition;
-            _getRaycastAgent = getRaycastAgent;
+            _getHoverable = getHoverable;
             _updateHoveringAgent = updateHoveringAgent;
             _checkForOnHoveringStart = checkForOnHoveringStart;
             _checkForOnHovering = checkForOnHovering;
             _checkForOnHoveringEnd = checkForOnHoveringEnd;
         }
 
-        public void Initialize()
-        {
-            _view.OnUpdate += Update;
-        }
+        public void Initialize() => _view.OnUpdate += Update;
 
         private void Update()
         {
             _updateMousePosition.Execute();
-            var agent = _getRaycastAgent.Execute();
+            var agent = _getHoverable.Execute();
             _updateHoveringAgent.Execute(agent);
             _checkForOnHoveringStart.Execute();
             _checkForOnHovering.Execute();

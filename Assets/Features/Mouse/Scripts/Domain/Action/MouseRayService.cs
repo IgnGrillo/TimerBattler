@@ -1,4 +1,4 @@
-﻿using Features.Core.Scripts.Delivery;
+﻿using Features.Core.Scripts.Domain;
 using UnityEngine;
 
 namespace Features.Mouse.Scripts.Domain.Action
@@ -15,13 +15,13 @@ namespace Features.Mouse.Scripts.Domain.Action
             _camera = Camera.main;
         }
 
-        public AgentView GetRaycastAgent()
+        public IHoverable GetHoverable()
         {
             CastRay();
             return GetAgent();
             
             void CastRay() => Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out _raycastHitInfo, Mathf.Infinity, _layerMask);
-            AgentView GetAgent() => _raycastHitInfo.collider != null ? _raycastHitInfo.collider.GetComponentInParent<AgentView>() : null;
+            IHoverable GetAgent() => _raycastHitInfo.collider != null ? _raycastHitInfo.collider.GetComponentInParent<IHoverable>() : null;
         }
     }
 }

@@ -1,8 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="Update MouseView, adding a WIP implementation of the ChangeMouseCursor Action">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IAgentView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IAgentView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHovering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHovering.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringEnd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringEnd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/HoveringService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/HoveringService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24d45e813e524a99bfb7a145158a7980157a00/bb/b5160302/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IslSCb47D8j9GvXXQBnvx5jRry" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.9f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Repositories\TimerBattler -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Repositories\TimerBattler" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Update CasterPresenterShould with a failing test to check if the CI is set up correctly">
+      <created>1670976568953</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670976568953</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="" />
+      <created>1670978173373</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670978173373</updated>
+      <workItem from="1670978180493" duration="1498000" />
+      <workItem from="1671066679311" duration="4535000" />
+      <workItem from="1671152316516" duration="2895000" />
+      <workItem from="1671158562102" duration="885000" />
+      <workItem from="1671237119129" duration="528000" />
+    </task>
+    <task id="LOCAL-00002" summary="Update InteractionRepository, removing an unused library">
+      <created>1670981271998</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670981271998</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update MousePresenter, adding three new test to check if there are any Hovering events needed to be called.&#10;&#10;My God, I am sorry for my sins with all my heart. In choosing to do wrong, and failing to do good, I have sinned against you whom I should love above all things. I firmly intend, with your help to do penance, to sin no more,and avoid whatever leads me to sin. Our savior Jesus Christ suffered and died for us. In his name, my God, have mercy.">
+      <created>1671070666474</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671070666474</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update MousePresenter, adding a new test, checking if the UpdateMousePosition is executed on the update loop">
+      <created>1671156684941</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671156684941</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add required classes to create and Initialize a MousePresenter on the MouseView">
+      <created>1671159140883</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671159140883</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update MouseView, adding a WIP implementation of the ChangeMouseCursor Action">
+      <created>1671159445673</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671159445673</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Update CasterPresenterShould with a failing test to check if the CI is set up correctly" />
+    <MESSAGE value="Update InteractionRepository, removing an unused library" />
+    <MESSAGE value="Update MousePresenter, adding three new test to check if there are any Hovering events needed to be called.&#10;&#10;My God, I am sorry for my sins with all my heart. In choosing to do wrong, and failing to do good, I have sinned against you whom I should love above all things. I firmly intend, with your help to do penance, to sin no more,and avoid whatever leads me to sin. Our savior Jesus Christ suffered and died for us. In his name, my God, have mercy." />
+    <MESSAGE value="Update MousePresenter, adding a new test, checking if the UpdateMousePosition is executed on the update loop" />
+    <MESSAGE value="Add required classes to create and Initialize a MousePresenter on the MouseView" />
+    <MESSAGE value="Update MouseView, adding a WIP implementation of the ChangeMouseCursor Action" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update MouseView, adding a WIP implementation of the ChangeMouseCursor Action" />
   </component>
 </project>

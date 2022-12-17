@@ -46,7 +46,7 @@ namespace Features.Mouse.Scripts.Domain.Action
             var currentAgent = _repository.GetCurrentAgent();
             
             if (IsNotHoveringAnAgent() && WasHoveringAnAgent())
-                currentAgent.OnHoveringEnd();
+                previousAgent.OnHoveringEnd();
 
             bool IsNotHoveringAnAgent() => currentAgent == null;
             bool WasHoveringAnAgent() => currentAgent != previousAgent;

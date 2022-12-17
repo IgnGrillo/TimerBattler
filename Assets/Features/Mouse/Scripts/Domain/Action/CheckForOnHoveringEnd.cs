@@ -2,9 +2,8 @@
 {
     public class CheckForOnHoveringEnd : ICheckForOnHoveringEnd
     {
-        public void Execute()
-        {
-            throw new System.NotImplementedException();
-        }
+        private readonly HoveringService _service;
+        public CheckForOnHoveringEnd(HoveringService service) => _service = service;
+        public void Execute() => _service.CheckForOnHoveringEnd();
     }
 }

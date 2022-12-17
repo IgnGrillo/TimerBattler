@@ -2,8 +2,8 @@
 {
     public interface IAgentView
     {
-        UnitDelegate OnHoveringStart { get; }
-        UnitDelegate OnHovering { get; }
-        UnitDelegate OnHoveringEnd { get; }
+        UnitDelegate OnHoveringStart { get; set; }
+        UnitDelegate OnHovering { get; set;}
+        UnitDelegate OnHoveringEnd { get; set;}
     }
 }

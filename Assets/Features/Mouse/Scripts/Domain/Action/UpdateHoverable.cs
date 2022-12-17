@@ -1,12 +1,13 @@
 ﻿using Features.Core.Scripts.Domain;
+using Features.Mouse.Scripts.Domain.Services;
 
 namespace Features.Mouse.Scripts.Domain.Action
 {
-    public class UpdateHoveringAgent : IUpdateHoveringAgent
+    public class UpdateHoverable : IUpdateHoverable
     {
         private readonly HoveringService _service;
 
-        public UpdateHoveringAgent(HoveringService service) => _service = service;
+        public UpdateHoverable(HoveringService service) => _service = service;
 
         public void Execute(IHoverable hoverable) => _service.UpdateHovering(hoverable);
     }

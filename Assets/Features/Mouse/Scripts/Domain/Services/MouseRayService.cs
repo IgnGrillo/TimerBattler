@@ -1,7 +1,7 @@
 ﻿using Features.Core.Scripts.Domain;
 using UnityEngine;
 
-namespace Features.Mouse.Scripts.Domain.Action
+namespace Features.Mouse.Scripts.Domain.Services
 {
     public class MouseRayService
     {
@@ -22,6 +22,15 @@ namespace Features.Mouse.Scripts.Domain.Action
             
             void CastRay() => Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out _raycastHitInfo, Mathf.Infinity, _layerMask);
             IHoverable GetAgent() => _raycastHitInfo.collider != null ? _raycastHitInfo.collider.GetComponentInParent<IHoverable>() : null;
+        }
+
+        public IInteractable GetInteractable()
+        {
+            CastRay();
+            return GetInteractable();
+            
+            void CastRay() => Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out _raycastHitInfo, Mathf.Infinity, _layerMask);
+            IInteractable GetInteractable() => _raycastHitInfo.collider != null ? _raycastHitInfo.collider.GetComponentInParent<IInteractable>() : null;
         }
     }
 }

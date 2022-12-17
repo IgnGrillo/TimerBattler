@@ -1,8 +1,6 @@
-﻿using Features.Core.Scripts.Delivery;
-using Features.Core.Scripts.Domain;
-using Features.Mouse.Scripts.Infrastructure;
+﻿using Features.Core.Scripts.Domain;
 
-namespace Features.Mouse.Scripts.Domain.Action
+namespace Features.Mouse.Scripts.Domain.Services
 {
     public class HoveringService
     {

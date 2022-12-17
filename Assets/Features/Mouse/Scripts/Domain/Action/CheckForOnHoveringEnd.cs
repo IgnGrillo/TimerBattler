@@ -1,4 +1,6 @@
-﻿namespace Features.Mouse.Scripts.Domain.Action
+﻿using Features.Mouse.Scripts.Domain.Services;
+
+namespace Features.Mouse.Scripts.Domain.Action
 {
     public class CheckForOnHoveringEnd : ICheckForOnHoveringEnd
     {

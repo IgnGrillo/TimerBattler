@@ -2,8 +2,8 @@
 
 namespace Features.Mouse.Scripts.Domain.Action
 {
-    public interface IUpdateHoveringAgent
+    public interface IGetInteractable
     {
-        void Execute(IHoverable hoverable);
+        IInteractable Execute();
     }
 }

@@ -7,14 +7,8 @@ namespace Features.Mouse.Scripts.Domain.Action.Drag
     {
         private readonly DraggingService _draggingService;
 
-        public UpdateDraggable(DraggingService draggingService)
-        {
-            _draggingService = draggingService;
-        }
+        public UpdateDraggable(DraggingService draggingService) => _draggingService = draggingService;
         
-        public void Execute(IDraggable draggable)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void Execute(IDraggable draggable) => _draggingService.UpdateDraggable(draggable);
     }
 }

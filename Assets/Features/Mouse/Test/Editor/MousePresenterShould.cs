@@ -125,6 +125,20 @@ namespace Features.Mouse.Test.Editor
         }
         
         [Test]
+        public void CheckIfDraggingOnUpdate()
+        {
+            var view = GivenAView();
+            var getDraggable = GivenAGetDraggable();
+            var draggable = Substitute.For<IDraggable>();
+            getDraggable.Execute().Returns(draggable);
+            var checkIfDragging = GivenACheckIfDragging();
+            var presenter = GivenAPresenter(view,getDraggable:getDraggable, checkIfDragging: checkIfDragging);
+            GivenAnInitialization(presenter);
+            WhenOnUpdateIsRaised(view);
+            ThenCheckIfDragging(checkIfDragging, draggable);
+        }
+        
+        [Test]
         public void UpdateDraggableOnUpdate()
         {
             var view = GivenAView();
@@ -137,7 +151,7 @@ namespace Features.Mouse.Test.Editor
             WhenOnUpdateIsRaised(view);
             ThenUpdateDraggable(updateDraggable, draggable);
         }
-        
+
         [Test]
         public void CheckForOnDragStartOnUpdate()
         {
@@ -178,6 +192,7 @@ namespace Features.Mouse.Test.Editor
         private static ICheckForOnHovering GivenACheckForOnHovering() => Substitute.For<ICheckForOnHovering>();
         private static ICheckForOnHoveringEnd givenACheckForOnHoveringEnd() => Substitute.For<ICheckForOnHoveringEnd>();
         private static IGetDraggable GivenAGetDraggable() => Substitute.For<IGetDraggable>();
+        private static ICheckIfDragging GivenACheckIfDragging() => Substitute.For<ICheckIfDragging>();
         private static IUpdateDraggable GivenAUpdateDraggable() => Substitute.For<IUpdateDraggable>();
         private static ICheckForOnDragStart GivenACheckForOnDragStart() => Substitute.For<ICheckForOnDragStart>();
         private static ICheckForOnDrag GivenACheckForOnDrag() => Substitute.For<ICheckForOnDrag>();
@@ -192,6 +207,7 @@ namespace Features.Mouse.Test.Editor
                                                IGetInteractable getInteractable = null,
                                                ICheckForInteraction checkForInteraction = null,
                                                IGetDraggable getDraggable = null,
+                                               ICheckIfDragging checkIfDragging = null,
                                                IUpdateDraggable updateDraggable = null,
                                                ICheckForOnDragStart checkForOnDragStart = null,
                                                ICheckForOnDrag checkForOnDrag = null,
@@ -207,6 +223,7 @@ namespace Features.Mouse.Test.Editor
                     getInteractable ?? Substitute.For<IGetInteractable>(),
                     checkForInteraction ?? Substitute.For<ICheckForInteraction>(),
                     getDraggable ?? Substitute.For<IGetDraggable>(),
+                    checkIfDragging ?? Substitute.For<ICheckIfDragging>(),
                     updateDraggable ?? Substitute.For<IUpdateDraggable>(),
                     checkForOnDragStart ?? Substitute.For<ICheckForOnDragStart>(),
                     checkForOnDrag ?? Substitute.For<ICheckForOnDrag>(),
@@ -223,6 +240,7 @@ namespace Features.Mouse.Test.Editor
         private static void ThenGetInteractable(IGetInteractable getInteractable) => getInteractable.Received(Once).Execute();
         private static void ThenCheckForInteraction(ICheckForInteraction checkForInteraction) => checkForInteraction.Received(Once).Execute(Arg.Any<IInteractable>());
         private static void ThenGetDraggable(IGetDraggable getDraggable) => getDraggable.Received(Once).Execute();
+        private static void ThenCheckIfDragging(ICheckIfDragging checkIfDragging, IDraggable draggable) => checkIfDragging.Received(Once).Execute(draggable);
         private static void ThenUpdateDraggable(IUpdateDraggable updateDraggable, IDraggable draggable) => updateDraggable.Received(Once).Execute(draggable);
         private static void ThenCheckForOnDragStart(ICheckForOnDragStart checkForOnDragStart) => checkForOnDragStart.Received(Once).Execute();
         private static void ThenCheckForOnDrag(ICheckForOnDrag checkForOnDrag) => checkForOnDrag.Received(Once).Execute();

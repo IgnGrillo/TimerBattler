@@ -16,17 +16,20 @@ namespace Features.Mouse.Scripts.Provider
             var hoveringService = new HoveringService(new InMemoryHoveringRepository());
             var draggingService = new DraggingService(new InMemoryDraggingRepository());
             var interactionService = new InteractionService();
-            var mouseRayService = new MouseRayService(mouseView.HoverLayerMask, mouseView.InteractableLayerMask);
+            var mouseRayService = new MouseRayService(mouseView.HoverLayerMask,
+                    mouseView.InteractableLayerMask,
+                    mouseView.DragLayerMask);
             return new MousePresenter(mouseView,
                     new UpdateMousePosition(),
                     new GetHoverable(mouseRayService),
                     new UpdateHoverable(hoveringService),
                     new CheckForOnHoveringStart(hoveringService),
                     new CheckForOnHovering(hoveringService),
-                    new CheckForOnHoveringEnd(hoveringService), 
+                    new CheckForOnHoveringEnd(hoveringService),
                     new GetInteractable(mouseRayService),
                     new CheckForInteraction(interactionService),
-                    new GetDraggable(),
+                    new GetDraggable(mouseRayService),
+                    new CheckIfDragging(draggingService),
                     new UpdateDraggable(draggingService),
                     new CheckForOnDragStart(draggingService),
                     new CheckForOnDrag(draggingService),

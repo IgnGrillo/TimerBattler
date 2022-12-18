@@ -8,5 +8,6 @@ namespace Features.Mouse.Scripts.Domain
         event UnitDelegate OnUpdate;
         LayerMask InteractableLayerMask { get; }
         LayerMask HoverLayerMask { get; }
+        LayerMask DragLayerMask { get; }
     }
 }

@@ -6,14 +6,8 @@ namespace Features.Mouse.Scripts.Domain.Action.Drag
     { 
         private readonly DraggingService _service;
 
-        public CheckForOnDragStart(DraggingService service)
-        {
-            _service = service;
-        }
+        public CheckForOnDragStart(DraggingService service) => _service = service;
 
-        public void Execute()
-        {
-            throw new System.NotImplementedException();
-        }
+        public void Execute() => _service.CheckForOnDragStart();
     }
 }

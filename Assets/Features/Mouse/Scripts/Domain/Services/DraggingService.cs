@@ -1,5 +1,5 @@
 ﻿using Features.Core.Scripts.Domain;
-using Features.Mouse.Scripts.Domain.Action;
+using UnityEngine;
 
 namespace Features.Mouse.Scripts.Domain.Services
 {
@@ -9,6 +9,12 @@ namespace Features.Mouse.Scripts.Domain.Services
 
         public DraggingService(IDraggingRepository repository) => _repository = repository;
 
+        public IDraggable CheckIfDragging(IDraggable draggable)
+        {
+            if (draggable != null && Input.GetMouseButton(0)) return draggable;
+            return null;
+        }
+        
         public void UpdateDraggable(IDraggable draggable)
         {
             _repository.SetPrevious(_repository.GetCurrentDraggable());
@@ -32,11 +38,11 @@ namespace Features.Mouse.Scripts.Domain.Services
             var previousDraggable = _repository.GetPreviousDraggable();
             var currentDraggable = _repository.GetCurrentDraggable();
             
-            if (IsHoveringAnAgent() && IsHoveringSameAgent())
+            if (IsDragging() && IsDraggingSameDraggable())
                 currentDraggable.OnDragging();
 
-            bool IsHoveringAnAgent() => currentDraggable != null;
-            bool IsHoveringSameAgent() => currentDraggable == previousDraggable;
+            bool IsDragging() => currentDraggable != null;
+            bool IsDraggingSameDraggable() => currentDraggable == previousDraggable;
         }
         
         public void CheckForOnDragEnd()
@@ -44,12 +50,11 @@ namespace Features.Mouse.Scripts.Domain.Services
             var previousDraggable = _repository.GetPreviousDraggable();
             var currentDraggable = _repository.GetCurrentDraggable();
             
-            if (IsNotHoveringAnAgent() && WasHoveringAnAgent())
+            if (IsNotDragging() && WasDragging())
                 previousDraggable.OnDraggingEnd();
 
-            bool IsNotHoveringAnAgent() => currentDraggable == null;
-            bool WasHoveringAnAgent() => currentDraggable != previousDraggable;
-            
+            bool IsNotDragging() => currentDraggable == null;
+            bool WasDragging() => currentDraggable != previousDraggable;
         }
     }
 }

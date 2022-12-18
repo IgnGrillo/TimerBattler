@@ -10,11 +10,13 @@ namespace Features.Mouse.Scripts.Delivery
     {
         [SerializeField] private LayerMask hoverLayerMask;
         [SerializeField] private LayerMask interactableLayerMask;
+        [SerializeField] private LayerMask dragLayerMask;
         [SerializeField] private Texture2D defaultMouseSprite;
         
         public event UnitDelegate OnUpdate;
         public LayerMask InteractableLayerMask => interactableLayerMask;
         public LayerMask HoverLayerMask => hoverLayerMask;
+        public LayerMask DragLayerMask => dragLayerMask;
 
         private void Awake()
         {

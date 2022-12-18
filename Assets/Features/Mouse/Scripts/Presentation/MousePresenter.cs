@@ -18,6 +18,7 @@ namespace Features.Mouse.Scripts.Presentation
         private readonly IGetInteractable _getInteractable;
         private readonly ICheckForInteraction _checkForInteraction;
         private readonly IGetDraggable _getDraggable;
+        private readonly ICheckIfDragging _checkIfDragging;
         private readonly IUpdateDraggable _updateDraggable;
         private readonly ICheckForOnDragStart _checkForOnDragStart;
         private readonly ICheckForOnDrag _checkForOnDrag;
@@ -33,6 +34,7 @@ namespace Features.Mouse.Scripts.Presentation
                               IGetInteractable getInteractable,
                               ICheckForInteraction checkForInteraction,
                               IGetDraggable getDraggable,
+                              ICheckIfDragging checkIfDragging,
                               IUpdateDraggable updateDraggable,
                               ICheckForOnDragStart checkForOnDragStart,
                               ICheckForOnDrag checkForOnDrag,
@@ -48,6 +50,7 @@ namespace Features.Mouse.Scripts.Presentation
             _getInteractable = getInteractable;
             _checkForInteraction = checkForInteraction;
             _getDraggable = getDraggable;
+            _checkIfDragging = checkIfDragging;
             _updateDraggable = updateDraggable;
             _checkForOnDragStart = checkForOnDragStart;
             _checkForOnDrag = checkForOnDrag;
@@ -79,6 +82,7 @@ namespace Features.Mouse.Scripts.Presentation
             void UpdateDraggableLogic()
             {
                 var draggable = _getDraggable.Execute();
+                _checkIfDragging.Execute(draggable);
                 _updateDraggable.Execute(draggable);
                 _checkForOnDragStart.Execute();
                 _checkForOnDrag.Execute();

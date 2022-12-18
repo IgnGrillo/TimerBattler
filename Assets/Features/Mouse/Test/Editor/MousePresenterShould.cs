@@ -102,7 +102,6 @@ namespace Features.Mouse.Test.Editor
         public void CheckForInteractOnUpdate()
         {
             var view = GivenAView();
-            var getInteractable = Substitute.For<IGetInteractable>();
             var checkForInteraction = Substitute.For<ICheckForInteraction>();
             var presenter = GivenAPresenter(view, checkForInteraction: checkForInteraction);
             GivenAnInitialization(presenter);

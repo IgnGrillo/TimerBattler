@@ -6,6 +6,7 @@ namespace Features.Mouse.Scripts.Domain
     public interface IMouseView
     {
         event UnitDelegate OnUpdate;
-        LayerMask RaycastLayerMask { get; }
+        LayerMask InteractableLayerMask { get; }
+        LayerMask HoverLayerMask { get; }
     }
 }

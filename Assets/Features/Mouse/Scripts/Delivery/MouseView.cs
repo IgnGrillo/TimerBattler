@@ -8,11 +8,13 @@ namespace Features.Mouse.Scripts.Delivery
 {
     public class MouseView : MonoBehaviour, IMouseView
     {
-        [SerializeField] private LayerMask raycastLayerMask;
+        [SerializeField] private LayerMask hoverLayerMask;
+        [SerializeField] private LayerMask interactableLayerMask;
         [SerializeField] private Texture2D defaultMouseSprite;
         
         public event UnitDelegate OnUpdate;
-        public LayerMask RaycastLayerMask => raycastLayerMask;
+        public LayerMask InteractableLayerMask => interactableLayerMask;
+        public LayerMask HoverLayerMask => hoverLayerMask;
 
         private void Awake()
         {

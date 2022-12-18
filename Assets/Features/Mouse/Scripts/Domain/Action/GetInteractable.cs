@@ -7,14 +7,8 @@ namespace Features.Mouse.Scripts.Domain.Action
     {
         private readonly MouseRayService _mouseRayService;
 
-        public GetInteractable(MouseRayService mouseRayService)
-        {
-            _mouseRayService = mouseRayService;
-        }
+        public GetInteractable(MouseRayService mouseRayService) => _mouseRayService = mouseRayService;
 
-        public IInteractable Execute()
-        {
-            return _mouseRayService.GetInteractable();
-        }
+        public IInteractable Execute() => _mouseRayService.GetInteractable();
     }
 }

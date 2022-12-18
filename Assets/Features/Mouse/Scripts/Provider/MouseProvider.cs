@@ -12,7 +12,7 @@ namespace Features.Mouse.Scripts.Provider
         {
             var hoveringService = new HoveringService(new InMemoryHoveringRepository());
             var interactionService = new InteractionService();
-            var mouseRayService = new MouseRayService(mouseView.RaycastLayerMask);
+            var mouseRayService = new MouseRayService(mouseView.HoverLayerMask, mouseView.InteractableLayerMask);
             return new MousePresenter(mouseView,
                     new UpdateMousePosition(),
                     new GetHoverable(mouseRayService),

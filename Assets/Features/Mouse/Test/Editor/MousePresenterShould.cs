@@ -2,12 +2,16 @@
 using Features.Core.Scripts.Domain;
 using Features.Mouse.Scripts.Domain;
 using Features.Mouse.Scripts.Domain.Action;
+using Features.Mouse.Scripts.Domain.Action.Drag;
+using Features.Mouse.Scripts.Domain.Action.Hover;
+using Features.Mouse.Scripts.Domain.Action.Interaction;
 using Features.Mouse.Scripts.Presentation;
 using NSubstitute;
 using NUnit.Framework;
 
 namespace Features.Mouse.Test.Editor
 {
+
     public class MousePresenterShould
     {
         private const int Once = 1;
@@ -119,6 +123,53 @@ namespace Features.Mouse.Test.Editor
             WhenOnUpdateIsRaised(view);
             ThenGetDraggable(getDraggable);
         }
+        
+        [Test]
+        public void UpdateDraggableOnUpdate()
+        {
+            var view = GivenAView();
+            var getDraggable = GivenAGetDraggable();
+            var draggable = Substitute.For<IDraggable>();
+            getDraggable.Execute().Returns(draggable);
+            var updateDraggable = GivenAUpdateDraggable();
+            var presenter = GivenAPresenter(view,getDraggable:getDraggable, updateDraggable: updateDraggable);
+            GivenAnInitialization(presenter);
+            WhenOnUpdateIsRaised(view);
+            ThenUpdateDraggable(updateDraggable, draggable);
+        }
+        
+        [Test]
+        public void CheckForOnDragStartOnUpdate()
+        {
+            var view = GivenAView();
+            var checkForOnDragStart = GivenACheckForOnDragStart();
+            var presenter = GivenAPresenter(view,checkForOnDragStart:checkForOnDragStart);
+            GivenAnInitialization(presenter);
+            WhenOnUpdateIsRaised(view);
+            ThenCheckForOnDragStart(checkForOnDragStart);
+        }
+        
+        [Test]
+        public void CheckForOnDragOnUpdate()
+        {
+            var view = GivenAView();
+            var checkForOnDrag = GivenACheckForOnDrag();
+            var presenter = GivenAPresenter(view,checkForOnDrag:checkForOnDrag);
+            GivenAnInitialization(presenter);
+            WhenOnUpdateIsRaised(view);
+            ThenCheckForOnDrag(checkForOnDrag);
+        }
+        
+        [Test]
+        public void CheckForOnDragEndOnUpdate()
+        {
+            var view = GivenAView();
+            var checkForOnDragEnd = givenACheckForOnDragEnd();
+            var presenter = GivenAPresenter(view,checkForOnDragEnd:checkForOnDragEnd);
+            GivenAnInitialization(presenter);
+            WhenOnUpdateIsRaised(view);
+            ThenCheckForOnDragEnd(checkForOnDragEnd);
+        }
 
         private static IMouseView GivenAView() => Substitute.For<IMouseView>();
         private static IGetHoverable GivenARaycastAgent() => Substitute.For<IGetHoverable>();
@@ -126,6 +177,11 @@ namespace Features.Mouse.Test.Editor
         private static ICheckForOnHoveringStart GivenACheckForOnHoveringStart() => Substitute.For<ICheckForOnHoveringStart>();
         private static ICheckForOnHovering GivenACheckForOnHovering() => Substitute.For<ICheckForOnHovering>();
         private static ICheckForOnHoveringEnd givenACheckForOnHoveringEnd() => Substitute.For<ICheckForOnHoveringEnd>();
+        private static IGetDraggable GivenAGetDraggable() => Substitute.For<IGetDraggable>();
+        private static IUpdateDraggable GivenAUpdateDraggable() => Substitute.For<IUpdateDraggable>();
+        private static ICheckForOnDragStart GivenACheckForOnDragStart() => Substitute.For<ICheckForOnDragStart>();
+        private static ICheckForOnDrag GivenACheckForOnDrag() => Substitute.For<ICheckForOnDrag>();
+        private static ICheckForOnDragEnd givenACheckForOnDragEnd() => Substitute.For<ICheckForOnDragEnd>();
         private MousePresenter GivenAPresenter(IMouseView view = null,
                                                IUpdateMousePosition updateMousePosition = null,
                                                IGetHoverable getHoverable = null,
@@ -135,7 +191,11 @@ namespace Features.Mouse.Test.Editor
                                                ICheckForOnHoveringEnd checkForOnHoveringEnd = null,
                                                IGetInteractable getInteractable = null,
                                                ICheckForInteraction checkForInteraction = null,
-                                               IGetDraggable getDraggable = null)
+                                               IGetDraggable getDraggable = null,
+                                               IUpdateDraggable updateDraggable = null,
+                                               ICheckForOnDragStart checkForOnDragStart = null,
+                                               ICheckForOnDrag checkForOnDrag = null,
+                                               ICheckForOnDragEnd checkForOnDragEnd = null)
         {
             return new MousePresenter(view ?? Substitute.For<IMouseView>(),
                     updateMousePosition ?? Substitute.For<IUpdateMousePosition>(),
@@ -146,7 +206,11 @@ namespace Features.Mouse.Test.Editor
                     checkForOnHoveringEnd ?? Substitute.For<ICheckForOnHoveringEnd>(),
                     getInteractable ?? Substitute.For<IGetInteractable>(),
                     checkForInteraction ?? Substitute.For<ICheckForInteraction>(),
-                    getDraggable ?? Substitute.For<IGetDraggable>());
+                    getDraggable ?? Substitute.For<IGetDraggable>(),
+                    updateDraggable ?? Substitute.For<IUpdateDraggable>(),
+                    checkForOnDragStart ?? Substitute.For<ICheckForOnDragStart>(),
+                    checkForOnDrag ?? Substitute.For<ICheckForOnDrag>(),
+                    checkForOnDragEnd ?? Substitute.For<ICheckForOnDragEnd>());
         }
 
         private static void GivenAnInitialization(MousePresenter presenter) => presenter.Initialize();
@@ -159,5 +223,9 @@ namespace Features.Mouse.Test.Editor
         private static void ThenGetInteractable(IGetInteractable getInteractable) => getInteractable.Received(Once).Execute();
         private static void ThenCheckForInteraction(ICheckForInteraction checkForInteraction) => checkForInteraction.Received(Once).Execute(Arg.Any<IInteractable>());
         private static void ThenGetDraggable(IGetDraggable getDraggable) => getDraggable.Received(Once).Execute();
+        private static void ThenUpdateDraggable(IUpdateDraggable updateDraggable, IDraggable draggable) => updateDraggable.Received(Once).Execute(draggable);
+        private static void ThenCheckForOnDragStart(ICheckForOnDragStart checkForOnDragStart) => checkForOnDragStart.Received(Once).Execute();
+        private static void ThenCheckForOnDrag(ICheckForOnDrag checkForOnDrag) => checkForOnDrag.Received(Once).Execute();
+        private static void ThenCheckForOnDragEnd(ICheckForOnDragEnd checkForOnDragEnd) => checkForOnDragEnd.Received(Once).Execute();
     }
 }

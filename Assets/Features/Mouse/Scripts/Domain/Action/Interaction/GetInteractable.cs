@@ -1,7 +1,7 @@
 ﻿using Features.Core.Scripts.Domain;
 using Features.Mouse.Scripts.Domain.Services;
 
-namespace Features.Mouse.Scripts.Domain.Action
+namespace Features.Mouse.Scripts.Domain.Action.Interaction
 {
     public class GetInteractable : IGetInteractable
     {

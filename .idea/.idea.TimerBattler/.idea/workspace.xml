@@ -4,14 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="Refactor MousePresenter test, removing an unused action from the test">
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IDraggable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IDraggable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetDraggable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetDraggable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetDraggable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetDraggable.cs.meta" afterDir="false" />
+    <list default="true" id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="Update MousePresenter, adding a test for the GetDraggable action">
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDrag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDrag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/ICheckForOnDrag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/ICheckForOnDragEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/ICheckForOnDragEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/ICheckForOnDragStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/ICheckForOnDragStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/IUpdateDraggable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/IUpdateDraggable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/UpdateDraggable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/UpdateDraggable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/IDraggingRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/IDraggingRepository.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/DraggingService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/DraggingService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Infrastructure/InMemoryDraggingRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Infrastructure/InMemoryDraggingRepository.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IDraggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IDraggable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/CheckForInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForInteraction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/CheckForInteraction.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHovering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/CheckForOnHovering.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHovering.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/CheckForOnHovering.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringEnd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/CheckForOnHoveringEnd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringEnd.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/CheckForOnHoveringEnd.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/CheckForOnHoveringStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringStart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/CheckForOnHoveringStart.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetDraggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/GetDraggable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetDraggable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/GetDraggable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetHoverable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/GetHoverable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetHoverable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/GetHoverable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/GetInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetInteractable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/GetInteractable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/ICheckForInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForInteraction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/ICheckForInteraction.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForOnHovering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/ICheckForOnHovering.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForOnHovering.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/ICheckForOnHovering.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForOnHoveringEnd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/ICheckForOnHoveringEnd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForOnHoveringEnd.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/ICheckForOnHoveringEnd.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForOnHoveringStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/ICheckForOnHoveringStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/ICheckForOnHoveringStart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/ICheckForOnHoveringStart.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetDraggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/IGetDraggable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetDraggable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/IGetDraggable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetHoverable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/IGetHoverable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetHoverable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/IGetHoverable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/IGetInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetInteractable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Interaction/IGetInteractable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IUpdateHoverable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/IUpdateHoverable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IUpdateHoverable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/IUpdateHoverable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/UpdateHoverable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/UpdateHoverable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/UpdateHoverable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Hover/UpdateHoverable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/HoveringService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/HoveringService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Presentation/MousePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Presentation/MousePresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" afterDir="false" />
@@ -111,7 +163,7 @@
       <workItem from="1671066679311" duration="4535000" />
       <workItem from="1671152316516" duration="2895000" />
       <workItem from="1671158562102" duration="885000" />
-      <workItem from="1671237119129" duration="12603000" />
+      <workItem from="1671237119129" duration="17809000" />
     </task>
     <task id="LOCAL-00002" summary="Update InteractionRepository, removing an unused library">
       <created>1670981271998</created>
@@ -225,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671331052734</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Update MousePresenter, adding a test for the GetDraggable action">
+      <created>1671331550257</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1671331550257</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +323,7 @@
     <MESSAGE value="Update MouseView, actions and interfaces to make the interaction logic work on playmode" />
     <MESSAGE value="Update MainScene updating the MouseView serialized layers and adding colliders to the agent" />
     <MESSAGE value="Refactor MousePresenter test, removing an unused action from the test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor MousePresenter test, removing an unused action from the test" />
+    <MESSAGE value="Update MousePresenter, adding a test for the GetDraggable action" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update MousePresenter, adding a test for the GetDraggable action" />
   </component>
 </project>

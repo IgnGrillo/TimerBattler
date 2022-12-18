@@ -8,10 +8,10 @@ namespace Features.Mouse.Scripts.Domain.Services
 
         public HoveringService(IHoveringRepository repository) => _repository = repository;
 
-        public void UpdateHovering(IHoverable currentAgent)
+        public void UpdateHovering(IHoverable hoverable)
         {
             _repository.SetPrevious(_repository.GetCurrentHoverable());
-            _repository.SetCurrent(currentAgent);
+            _repository.SetCurrent(hoverable);
         }
 
         public void CheckForOnHoveringStart()

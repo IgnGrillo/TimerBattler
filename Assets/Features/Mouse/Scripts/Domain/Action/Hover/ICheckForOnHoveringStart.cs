@@ -1,4 +1,4 @@
-namespace Features.Mouse.Scripts.Domain.Action
+namespace Features.Mouse.Scripts.Domain.Action.Hover
 {
     public interface ICheckForOnHoveringStart
     {

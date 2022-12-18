@@ -1,5 +1,8 @@
 ﻿using Features.Mouse.Scripts.Domain;
 using Features.Mouse.Scripts.Domain.Action;
+using Features.Mouse.Scripts.Domain.Action.Drag;
+using Features.Mouse.Scripts.Domain.Action.Hover;
+using Features.Mouse.Scripts.Domain.Action.Interaction;
 
 namespace Features.Mouse.Scripts.Presentation
 {
@@ -15,6 +18,10 @@ namespace Features.Mouse.Scripts.Presentation
         private readonly IGetInteractable _getInteractable;
         private readonly ICheckForInteraction _checkForInteraction;
         private readonly IGetDraggable _getDraggable;
+        private readonly IUpdateDraggable _updateDraggable;
+        private readonly ICheckForOnDragStart _checkForOnDragStart;
+        private readonly ICheckForOnDrag _checkForOnDrag;
+        private readonly ICheckForOnDragEnd _checkForOnDragEnd;
 
         public MousePresenter(IMouseView view,
                               IUpdateMousePosition updateMousePosition,
@@ -24,8 +31,12 @@ namespace Features.Mouse.Scripts.Presentation
                               ICheckForOnHovering checkForOnHovering,
                               ICheckForOnHoveringEnd checkForOnHoveringEnd,
                               IGetInteractable getInteractable,
-                              ICheckForInteraction checkForInteraction, 
-                              IGetDraggable getDraggable)
+                              ICheckForInteraction checkForInteraction,
+                              IGetDraggable getDraggable,
+                              IUpdateDraggable updateDraggable,
+                              ICheckForOnDragStart checkForOnDragStart,
+                              ICheckForOnDrag checkForOnDrag,
+                              ICheckForOnDragEnd checkForOnDragEnd)
         {
             _view = view;
             _updateMousePosition = updateMousePosition;
@@ -37,6 +48,10 @@ namespace Features.Mouse.Scripts.Presentation
             _getInteractable = getInteractable;
             _checkForInteraction = checkForInteraction;
             _getDraggable = getDraggable;
+            _updateDraggable = updateDraggable;
+            _checkForOnDragStart = checkForOnDragStart;
+            _checkForOnDrag = checkForOnDrag;
+            _checkForOnDragEnd = checkForOnDragEnd;
         }
 
         public void Initialize() => _view.OnUpdate += Update;
@@ -46,7 +61,7 @@ namespace Features.Mouse.Scripts.Presentation
             _updateMousePosition.Execute();
             UpdateHoverableLogic();
             UpdateInteractableLogic();
-            var draggable = _getDraggable.Execute();
+            UpdateDraggableLogic();
             
             void UpdateHoverableLogic()
             {
@@ -60,6 +75,14 @@ namespace Features.Mouse.Scripts.Presentation
             {
                 var interactable = _getInteractable.Execute();
                 _checkForInteraction.Execute(interactable);
+            }
+            void UpdateDraggableLogic()
+            {
+                var draggable = _getDraggable.Execute();
+                _updateDraggable.Execute(draggable);
+                _checkForOnDragStart.Execute();
+                _checkForOnDrag.Execute();
+                _checkForOnDragEnd.Execute();
             }
         }
     }

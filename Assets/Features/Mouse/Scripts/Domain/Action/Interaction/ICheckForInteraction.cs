@@ -1,7 +1,6 @@
 ﻿using Features.Core.Scripts.Domain;
-using Features.Mouse.Scripts.Provider;
 
-namespace Features.Mouse.Scripts.Domain.Action
+namespace Features.Mouse.Scripts.Domain.Action.Interaction
 {
     public interface ICheckForInteraction
     {

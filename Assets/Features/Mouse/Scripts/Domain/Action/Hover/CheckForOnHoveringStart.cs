@@ -1,6 +1,6 @@
 ﻿using Features.Mouse.Scripts.Domain.Services;
 
-namespace Features.Mouse.Scripts.Domain.Action
+namespace Features.Mouse.Scripts.Domain.Action.Hover
 {
     public class CheckForOnHoveringStart : ICheckForOnHoveringStart
     {

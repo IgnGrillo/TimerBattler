@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="Update MouseView, adding a WIP implementation of the ChangeMouseCursor Action">
+    <list default="true" id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="Refactor MousePresenter test, removing an unused action from the test">
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IDraggable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IDraggable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetDraggable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/GetDraggable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetDraggable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/IGetDraggable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IAgentView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Domain/IAgentView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHovering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHovering.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringEnd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringEnd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/CheckForOnHoveringStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/HoveringService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/HoveringService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Presentation/MousePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Presentation/MousePresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,21 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24d45e813e524a99bfb7a145158a7980157a00/bb/b5160302/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Core/Scripts/Delivery/AgentView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Core/Scripts/Delivery/AgentView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Delivery/MouseView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Action/GetInteractable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/IMouseView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Services/MouseRayService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/TimerBattler/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,7 +111,7 @@
       <workItem from="1671066679311" duration="4535000" />
       <workItem from="1671152316516" duration="2895000" />
       <workItem from="1671158562102" duration="885000" />
-      <workItem from="1671237119129" duration="528000" />
+      <workItem from="1671237119129" duration="12603000" />
     </task>
     <task id="LOCAL-00002" summary="Update InteractionRepository, removing an unused library">
       <created>1670981271998</created>
@@ -133,7 +148,84 @@
       <option name="project" value="LOCAL" />
       <updated>1671159445673</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update AgentView and Mouse actions, making the logic work on the scene">
+      <created>1671237973280</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671237973280</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update the tag Manager, adding the Agent tag to the project">
+      <created>1671238006444</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671238006444</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add Cursor Image and configuration to the project">
+      <created>1671238057115</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671238057115</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update the Main Scene with an Agent to interact with">
+      <created>1671238074987</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671238074987</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add tracking of the xml files">
+      <created>1671238090631</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1671238090631</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Rename Hovering related classes&#10;&#10;So I ask now for Your forgiveness For the wrongs that I have done And the things that I have neglected I ask for Your forgiveness For the people I have hurt along the way And those who I have failed to love as You love I ask for Your forgiveness">
+      <created>1671243446661</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671243446661</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update scene, adding new layers and updating the Agent GO">
+      <created>1671243474654</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671243474654</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update MousePresenter, adding two new actions for updating and checking for an Interaction &amp;&amp; Rename Variables&#10;&#10;Lord, against you I have sinned alone. I know that every time I choose sin over you, I revert to the ways of my old self before I knew you. Help me to return to the paths of righteousness, to turn away from my wrongdoing, and to become more like you every day. Amen.">
+      <created>1671306451106</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671306451106</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update MouseView, actions and interfaces to make the interaction logic work on playmode">
+      <created>1671330924612</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1671330924612</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update MainScene updating the MouseView serialized layers and adding colliders to the agent">
+      <created>1671330968831</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1671330968831</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Refactor MousePresenter test, removing an unused action from the test">
+      <created>1671331052734</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671331052734</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +253,17 @@
     <MESSAGE value="Update MousePresenter, adding a new test, checking if the UpdateMousePosition is executed on the update loop" />
     <MESSAGE value="Add required classes to create and Initialize a MousePresenter on the MouseView" />
     <MESSAGE value="Update MouseView, adding a WIP implementation of the ChangeMouseCursor Action" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update MouseView, adding a WIP implementation of the ChangeMouseCursor Action" />
+    <MESSAGE value="Update AgentView and Mouse actions, making the logic work on the scene" />
+    <MESSAGE value="Update the tag Manager, adding the Agent tag to the project" />
+    <MESSAGE value="Add Cursor Image and configuration to the project" />
+    <MESSAGE value="Update the Main Scene with an Agent to interact with" />
+    <MESSAGE value="Add tracking of the xml files" />
+    <MESSAGE value="Rename Hovering related classes&#10;&#10;So I ask now for Your forgiveness For the wrongs that I have done And the things that I have neglected I ask for Your forgiveness For the people I have hurt along the way And those who I have failed to love as You love I ask for Your forgiveness" />
+    <MESSAGE value="Update scene, adding new layers and updating the Agent GO" />
+    <MESSAGE value="Update MousePresenter, adding two new actions for updating and checking for an Interaction &amp;&amp; Rename Variables&#10;&#10;Lord, against you I have sinned alone. I know that every time I choose sin over you, I revert to the ways of my old self before I knew you. Help me to return to the paths of righteousness, to turn away from my wrongdoing, and to become more like you every day. Amen." />
+    <MESSAGE value="Update MouseView, actions and interfaces to make the interaction logic work on playmode" />
+    <MESSAGE value="Update MainScene updating the MouseView serialized layers and adding colliders to the agent" />
+    <MESSAGE value="Refactor MousePresenter test, removing an unused action from the test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor MousePresenter test, removing an unused action from the test" />
   </component>
 </project>

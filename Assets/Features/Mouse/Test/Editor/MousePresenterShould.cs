@@ -108,6 +108,17 @@ namespace Features.Mouse.Test.Editor
             WhenOnUpdateIsRaised(view);
             ThenCheckForInteraction(checkForInteraction);
         }
+        
+        [Test]
+        public void GetDraggableOnUpdate()
+        {
+            var view = GivenAView();
+            var getDraggable = Substitute.For<IGetDraggable>();
+            var presenter = GivenAPresenter(view, getDraggable: getDraggable);
+            GivenAnInitialization(presenter);
+            WhenOnUpdateIsRaised(view);
+            ThenGetDraggable(getDraggable);
+        }
 
         private static IMouseView GivenAView() => Substitute.For<IMouseView>();
         private static IGetHoverable GivenARaycastAgent() => Substitute.For<IGetHoverable>();
@@ -123,7 +134,8 @@ namespace Features.Mouse.Test.Editor
                                                ICheckForOnHovering checkForOnHovering = null,
                                                ICheckForOnHoveringEnd checkForOnHoveringEnd = null,
                                                IGetInteractable getInteractable = null,
-                                               ICheckForInteraction checkForInteraction = null)
+                                               ICheckForInteraction checkForInteraction = null,
+                                               IGetDraggable getDraggable = null)
         {
             return new MousePresenter(view ?? Substitute.For<IMouseView>(),
                     updateMousePosition ?? Substitute.For<IUpdateMousePosition>(),
@@ -133,7 +145,8 @@ namespace Features.Mouse.Test.Editor
                     checkForOnHovering ?? Substitute.For<ICheckForOnHovering>(),
                     checkForOnHoveringEnd ?? Substitute.For<ICheckForOnHoveringEnd>(),
                     getInteractable ?? Substitute.For<IGetInteractable>(),
-                    checkForInteraction ?? Substitute.For<ICheckForInteraction>());
+                    checkForInteraction ?? Substitute.For<ICheckForInteraction>(),
+                    getDraggable ?? Substitute.For<IGetDraggable>());
         }
 
         private static void GivenAnInitialization(MousePresenter presenter) => presenter.Initialize();
@@ -145,5 +158,6 @@ namespace Features.Mouse.Test.Editor
         private static void ThenCheckForOnHoveringEndIsCalled(ICheckForOnHoveringEnd checkForOnHoveringEnd) => checkForOnHoveringEnd.Received(Once).Execute();
         private static void ThenGetInteractable(IGetInteractable getInteractable) => getInteractable.Received(Once).Execute();
         private static void ThenCheckForInteraction(ICheckForInteraction checkForInteraction) => checkForInteraction.Received(Once).Execute(Arg.Any<IInteractable>());
+        private static void ThenGetDraggable(IGetDraggable getDraggable) => getDraggable.Received(Once).Execute();
     }
 }

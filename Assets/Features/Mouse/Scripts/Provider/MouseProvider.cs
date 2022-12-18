@@ -21,7 +21,8 @@ namespace Features.Mouse.Scripts.Provider
                     new CheckForOnHovering(hoveringService),
                     new CheckForOnHoveringEnd(hoveringService), 
                     new GetInteractable(mouseRayService),
-                    new CheckForInteraction(interactionService));
+                    new CheckForInteraction(interactionService),
+                    new GetDraggable());
         }
     }
 }

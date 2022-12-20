@@ -1,4 +1,4 @@
-﻿namespace Features.Core.Scripts.Presentation
+﻿namespace Features.Agent.Scripts.Presentation
 {
     public class AgentPresenter
     {

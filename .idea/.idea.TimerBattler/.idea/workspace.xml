@@ -4,25 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="Update MousePresenter, adding a test to check for dragging &amp;&amp; General Refactor, adding clearer directories and namespaces&#10;&#10;Where people feel forgotten and hopeless Let your water of life Comfort them Where children lie abandoned or abused Let your water of life Protect them Where communities suffer at the hands of prejudice Let your water of life Shield them">
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckIfDragging.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckIfDragging.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/ICheckIfDragging.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/ICheckIfDragging.cs.meta" afterDir="false" />
+    <list default="true" id="65442e36-3ede-4785-9530-20ce4458d090" name="Changes" comment="Update main scene, adding the missing layers to the AgentView component">
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Dummy_Agent.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Dummy_Agent.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent/Test.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent/Test/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent/Test/Editor/Dummy_Test_Agent.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Agent/Test/Editor/Dummy_Test_Agent.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/ErrorHandle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Scripts/Dummy_HeroSelection.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Scripts/Dummy_HeroSelection.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Test.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Test/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Test/Editor/Dummy_Test_HeroSelection.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Test/Editor/Dummy_Test_HeroSelection.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Test/Editor/HeroSelctionPresenterShould.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/HeroSelection/Test/Editor/HeroSelctionPresenterShould.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Scripts/Dummy_Player.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Scripts/Dummy_Player.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Test.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Test/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Test/Editor/Dummy_Test_Player.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Test/Editor/Dummy_Test_Player.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Test/Editor/PlayerShould.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Player/Test/Editor/PlayerShould.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimerBattler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Delivery/MouseView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Delivery/MouseView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDrag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDrag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragEnd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragEnd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/GetDraggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/GetDraggable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/UpdateDraggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Action/Drag/UpdateDraggable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/IMouseView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/IMouseView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/DraggingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/DraggingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/MouseRayService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Domain/Services/MouseRayService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Presentation/MousePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Presentation/MousePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/ActionSubscriptionNotFound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/ErrorHandle/ActionSubscriptionNotFound.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/ActionSubscriptionNotFound.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Core/Scripts/ErrorHandle/ActionSubscriptionNotFound.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Delivery.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Delivery/AgentView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Delivery/AgentView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Delivery/AgentView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Presentation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Presentation.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Presentation/AgentPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Presentation/AgentPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Scripts/Presentation/AgentPresenter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Agent/Scripts/Presentation/AgentPresenter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Test.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Test/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Test/Editor/AgentPresenterShould.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Test/Editor/AgentPresenterShould.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Test/Editor/Dummy_Test_Core.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Core/Test/Editor/Dummy_Test_Core.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,29 +58,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24d45e813e524a99bfb7a145158a7980157a00/bb/b5160302/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Core/Scripts/Delivery/AgentView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Core/Scripts/Delivery/AgentView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Delivery/MouseView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDrag.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragEnd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Action/Drag/CheckForOnDragStart.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Action/Drag/GetDraggable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Action/Drag/UpdateDraggable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Action/GetInteractable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/IMouseView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Services/DraggingService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Services/MouseRayService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Services/MouseRayService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Domain/Services/MouseRayService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Scripts/Provider/MouseProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Features/Mouse/Test/Editor/MousePresenterShould.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Repositories/TimerBattler/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -127,7 +131,8 @@
       <workItem from="1671066679311" duration="4535000" />
       <workItem from="1671152316516" duration="2895000" />
       <workItem from="1671158562102" duration="885000" />
-      <workItem from="1671237119129" duration="21560000" />
+      <workItem from="1671237119129" duration="25029000" />
+      <workItem from="1671511342107" duration="622000" />
     </task>
     <task id="LOCAL-00002" summary="Update InteractionRepository, removing an unused library">
       <created>1670981271998</created>
@@ -255,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671337238306</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Update MousePresenter and AgentView, closing the drag functionality">
+      <created>1671387193623</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1671387193623</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Update main scene, adding the missing layers to the AgentView component">
+      <created>1671387723446</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1671387723446</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +315,8 @@
     <MESSAGE value="Refactor MousePresenter test, removing an unused action from the test" />
     <MESSAGE value="Update MousePresenter, adding a test for the GetDraggable action" />
     <MESSAGE value="Update MousePresenter, adding a test to check for dragging &amp;&amp; General Refactor, adding clearer directories and namespaces&#10;&#10;Where people feel forgotten and hopeless Let your water of life Comfort them Where children lie abandoned or abused Let your water of life Protect them Where communities suffer at the hands of prejudice Let your water of life Shield them" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update MousePresenter, adding a test to check for dragging &amp;&amp; General Refactor, adding clearer directories and namespaces&#10;&#10;Where people feel forgotten and hopeless Let your water of life Comfort them Where children lie abandoned or abused Let your water of life Protect them Where communities suffer at the hands of prejudice Let your water of life Shield them" />
+    <MESSAGE value="Update MousePresenter and AgentView, closing the drag functionality" />
+    <MESSAGE value="Update main scene, adding the missing layers to the AgentView component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update main scene, adding the missing layers to the AgentView component" />
   </component>
 </project>

@@ -1,7 +1,8 @@
-﻿using Features.Core.Scripts.Domain;
+﻿using Features.Core.Scripts;
+using Features.Core.Scripts.Domain;
 using UnityEngine;
 
-namespace Features.Core.Scripts.Delivery
+namespace Features.Agent.Scripts.Delivery
 {
     public class AgentView : MonoBehaviour, IHoverable, IInteractable, IDraggable
     {

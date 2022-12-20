@@ -1,3 +1,4 @@
 ﻿{
-  "name": "Dummy_HeroSelection"
+  "name": "Dummy_HeroSelection",
+  "references": ["Dummy_Core"]
 }

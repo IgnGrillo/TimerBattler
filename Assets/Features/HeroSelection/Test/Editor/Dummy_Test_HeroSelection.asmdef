@@ -4,6 +4,7 @@
     "Editor"
   ],
   "references": [
-    "Dummy_Core"
+    "Dummy_Core",
+    "Dummy_HeroSelection"
   ]
 }

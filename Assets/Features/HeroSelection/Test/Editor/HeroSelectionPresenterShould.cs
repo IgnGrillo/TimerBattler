@@ -1,12 +1,12 @@
 ﻿using UnityEditor;
 
-namespace Features.Core.Test.Editor
+namespace Features.HeroSelection.Test.Editor
 {
-    public class AgentPresenterShould
+    public class HeroSelectionPresenterShould
     {
 
         [NUnit.Framework.Test]
-        public void AgentPresenterShouldSimplePasses()
+        public void HeroSelctionPresenterShouldSimplePasses()
         {
             // Use the Assert class to test conditions.
             

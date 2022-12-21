@@ -15,7 +15,6 @@ namespace Features.AddNewFeatureFolder.Scripts.Editor
         private float _windowWidth;
         private Vector2 _scriptsScrollPosition;
 
-        
         [MenuItem("Window/Dummy/CreateFeatureDirectorie %g")]
         public static void ShowWindow() => GetWindow(typeof(CreateFeatureDirectoriesWindow),true,nameof(CreateFeatureDirectoriesWindow));
 
@@ -70,7 +69,7 @@ namespace Features.AddNewFeatureFolder.Scripts.Editor
             CheckForAsmdefCreation();
             CheckForGitKeepCreation();
             foreach (var subDirectory in currentDirectory.subDirectories)
-                CreateDirectoryTree(parentPath, subDirectory);
+                CreateDirectoryTree(currentPath, subDirectory);
 
             string UpdatePath() => Path.Combine(parentPath, currentDirectory.name);
             void CreateDirectory(string directory) => Directory.CreateDirectory(directory);
@@ -78,7 +77,7 @@ namespace Features.AddNewFeatureFolder.Scripts.Editor
             {
                 var asmdefConfiguration = currentDirectory.asmdefConfiguration;
                 if (asmdefConfiguration.createAsmdef)
-                    CreateAsmdefFile(parentPath, asmdefConfiguration.assemblyName + _featureToCreate);
+                    CreateAsmdefFile(currentPath, asmdefConfiguration.assemblyName + _featureToCreate);
             }
             void CreateAsmdefFile(string scriptsDirectory, string asmdefName)
             {
@@ -86,17 +85,16 @@ namespace Features.AddNewFeatureFolder.Scripts.Editor
                 {
                     var sb = new StringBuilder();
                     sb.AppendLine("{");
-                    sb.Append(@"{""name"":");
-                    sb.Append($"\"{asmdefName}\"");
+                    sb.AppendLine(@"""name"":" + $"\"{asmdefName}\"");
                     sb.Append("}");
                     stream.Write(new UTF8Encoding(true).GetBytes(sb.ToString()));
                 }
             }
-            void CreateGitKeepFile(string directory) => File.Create(directory + "/.gitkeep");
             void CheckForGitKeepCreation()
             {
-                if (currentDirectory.subDirectories.Count == 0) CreateGitKeepFile(parentPath);
+                if (currentDirectory.subDirectories.Count == 0) CreateGitKeepFile(currentPath);
             }
+            void CreateGitKeepFile(string directory) => File.Create(directory + "/.gitkeep");
         }
         private void DrawDirectorySetUp()
         {

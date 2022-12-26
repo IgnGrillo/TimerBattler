@@ -114,9 +114,11 @@ namespace Features.AddNewFeatureFolder.Scripts.Editor
 
             GUILayout.BeginVertical("Box", GUILayout.Width(100));
             DrawStateName();
-            DrawStateAsmdefConfiguration();
-            foreach (var subdirectory in currentDirectory.subDirectories)
-                DrawDirectory(subdirectory, depth + 1);
+            if (WantsToCreateDirectory())
+            { 
+                DrawStateAsmdefConfiguration(); 
+                DrawSubDirectories();
+            }
             EditorGUILayout.EndVertical();
 
             void DrawStateName()
@@ -126,6 +128,7 @@ namespace Features.AddNewFeatureFolder.Scripts.Editor
                 currentDirectory.createDirectory = EditorGUILayout.ToggleLeft(currentDirectory.name, currentDirectory.createDirectory);
                 GUILayout.EndHorizontal();
             }
+            bool WantsToCreateDirectory() => directory.createDirectory;
             void DrawStateAsmdefConfiguration()
             {
                 if (!currentDirectory.createDirectory) return;
@@ -149,6 +152,11 @@ namespace Features.AddNewFeatureFolder.Scripts.Editor
                 if (asmdefConfiguration.createAsmdef)
                     asmdefConfiguration.assemblyName = EditorGUILayout.TextField(asmdefConfiguration.assemblyName);
                 GUILayout.EndHorizontal();
+            }
+            void DrawSubDirectories()
+            {
+                foreach (var subdirectory in currentDirectory.subDirectories)
+                    DrawDirectory(subdirectory, depth + 1);
             }
         }
         private void SetUpFeatureCreationProfile()
